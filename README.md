@@ -1,17 +1,17 @@
 # HDR_synthesizer
 For 15663 computational photography
 
-###HDRjpeg.py###
+## HDRjpeg.py ##
 - Performs HDR merging and luminance evaluation on JPG images
 - Functions:
-	downSample(img,N)
+	### downSample(img,N)
 	- Downsample image
 	- input: 
 		• img: RGB image to be downsampled
 		• N: downsample factor
 	- output: downsampled image
 	
-	weight(imgVal,w_type,Zmin,Zmax,t_expo=None,
+	### weight(imgVal,w_type,Zmin,Zmax,t_expo=None,
 			isReg=False,isLinear=False)
 	- Function that perform pixel weighting
 	- input:
@@ -24,7 +24,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_uniform(imgVal,Zmin,Zmax)
+	### W_uniform(imgVal,Zmin,Zmax)
 	- Uniform weighting
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -32,7 +32,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_tent(imgVal,Zmin,Zmax)
+	### W_tent(imgVal,Zmin,Zmax)
 	- Tent weighting 
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -40,7 +40,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_gauss(imgVal,Zmin,Zmax)
+	### W_gauss(imgVal,Zmin,Zmax)
 	- Gaussian weighting 
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -48,7 +48,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_photon(imgVal,t_expo,Zmin,Zmax)
+	### W_photon(imgVal,t_expo,Zmin,Zmax)
 	- Photon weighting
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -58,14 +58,14 @@ For 15663 computational photography
 		• img_w: weighted pixel value
 
 
-	gammaEncode(img_linear)
+	### gammaEncode(img_linear)
 	- Gamma Encoding
 	- input:
 		• img_linear: linear image
 	- output:
 		• img_gamma: gamma encoded image
 
-	loadImg(imgNames,N)
+	### loadImg(imgNames,N)
 	- Load images from system
 	- input:
 		• imgNames: array that stores the image file names
@@ -76,8 +76,7 @@ For 15663 computational photography
 		• log_t_expo: logarithm of exposture time of each image
 		• W_/ H_: size of downsampled image
 
-	linearization(img_down_flat,img_full_flat,
-				log_t_expo,lamb,weight_type,W_,H_)
+	### linearization(img_down_flat,img_full_flat,log_t_expo,lamb,weight_type,W_,H_)
 	- Function that performs linearization
 	- input:
 		• img_down_flat: downsampled image stack
@@ -89,7 +88,7 @@ For 15663 computational photography
 	- output:
 		• img_linear: linearized image stack
 
-	HDR(img_flat, log_t_expo, weight_type, merge_type, W, H)
+	### HDR(img_flat, log_t_expo, weight_type, merge_type, W, H)
 	- Function that performs HDR merging
 	- input:
 		• img_flat: flatten image stack
@@ -100,14 +99,14 @@ For 15663 computational photography
 	- output:
 		• img_HDR: HDR image
 
-	loadColorCheker()
+	### loadColorCheker()
 	- load color checker for evaluation
 	- input:
 	- output:
 		• colorchecker: matrix that stores color checker values
 		• patchLoc: the neutral grey patch location
 
-	getImgPatchLum(img_HDR)
+	### getImgPatchLum(img_HDR)
 	- Function that selects luminance of patches in image
 	- input:
 		• img_HDR: the image to choose from
@@ -115,17 +114,17 @@ For 15663 computational photography
 		• img_patch_lum: the luminance of selected patches
 
 
-###HDRraw.py###
+## HDRraw.py ##
 - Performs HDR merging and luminance evaluation on RAW (.tiff) images
 - Functions:
-	downSample(img,N)
+	### downSample(img,N)
 	- Downsample image
 	- input: 
 		• img: RGB image to be downsampled
 		• N: downsample factor
 	- output: downsampled image
 
-	weight(imgVal,w_type,Zmin,Zmax,t_expo=None,
+	### weight(imgVal,w_type,Zmin,Zmax,t_expo=None,
 			isReg=False)
 	- Function that perform pixel weighting
 	- input:
@@ -137,7 +136,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_uniform(imgVal,Zmin,Zmax)
+	### W_uniform(imgVal,Zmin,Zmax)
 	- Uniform weighting
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -145,7 +144,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_tent(imgVal,Zmin,Zmax)
+	### W_tent(imgVal,Zmin,Zmax)
 	- Tent weighting 
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -153,7 +152,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_gauss(imgVal,Zmin,Zmax)
+	### W_gauss(imgVal,Zmin,Zmax)
 	- Gaussian weighting 
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -161,7 +160,7 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	W_photon(imgVal,t_expo,Zmin,Zmax)
+	### W_photon(imgVal,t_expo,Zmin,Zmax)
 	- Photon weighting
 	- input: 
 		• imgVal: image pixel value, can be matrix
@@ -170,14 +169,14 @@ For 15663 computational photography
 	- output:
 		• img_w: weighted pixel value
 
-	gammaEncode(img_linear)
+	### gammaEncode(img_linear)
 	- Gamma Encoding
 	- input:
 		• img_linear: linear image
 	- output:
 		• img_gamma: gamma encoded image
 
-	loadImg(imgNames,N)
+	### loadImg(imgNames,N)
 	- Load images from system
 	- input:
 		• imgNames: array that stores the image file names
@@ -188,7 +187,7 @@ For 15663 computational photography
 		• log_t_expo: logarithm of exposture time of each image
 		• W_/ H_: size of downsampled image
 
-	HDR(img_flat, log_t_expo, weight_type, merge_type, W, H)
+	### HDR(img_flat, log_t_expo, weight_type, merge_type, W, H)
 	- Function that performs HDR merging
 	- input:
 		• img_flat: flatten image stack
@@ -199,21 +198,21 @@ For 15663 computational photography
 	- output:
 		• img_HDR: HDR image
 
-	loadColorCheker()
+	### loadColorCheker()
 	- load color checker for evaluation
 	- input:
 	- output:
 		• colorchecker: matrix that stores color checker values
 		• patchLoc: the neutral grey patch location
 
-	getImgPatchLum(img_HDR)
+	### getImgPatchLum(img_HDR)
 	- Function that selects luminance of patches in image
 	- input:
 		• img_HDR: the image to choose from
 	- output:
 		• img_patch_lum: the luminance of selected patches
 
-###myHDR.py###
+## myHDR.py ##
 - Perform HDR merging on my images, contains noise calibration and noise-optimal weight
 - Functions:
 	** Almost identical to HDRraw.py and HDRjpeg.py
@@ -221,17 +220,17 @@ For 15663 computational photography
 	- added isNoiseCalibrate, true if want to perform noise calibration
 
 
-###Tonemapping.py###
+## Tonemapping.py ##
 - Performs tone mapping on HDR image
 - Functions:
-	gammaEncode(img_linear)
+	### gammaEncode(img_linear)
 	- Gamma Encoding
 	- input:
 		• img_linear: linear image
 	- output:
 		• img_gamma: gamma encoded image
 
-	tonemapping(img_HDR,tonemap_type,K,B,pixelNum,epsilon)
+	### tonemapping(img_HDR,tonemap_type,K,B,pixelNum,epsilon)
 	- Tonemapping function
 	- input:
 		• img_HDR: the HDR image for tone mapping
@@ -244,30 +243,30 @@ For 15663 computational photography
 		• img_TM: the tonemapped image
 
 
-###ColorCorrection.py###
+## ColorCorrection.py ##
 - Performs color correction and white balance on HDR image
 - Functions:
-	loadColorCheker()
+	### loadColorCheker()
 	- load color checker for evaluation
 	- input:
 	- output:
 		• colorchecker: matrix that stores color checker values
 
-	gammaEncode(img_linear)
+	### gammaEncode(img_linear)
 	- Gamma Encoding
 	- input:
 		• img_linear: linear image
 	- output:
 		• img_gamma: gamma encoded image
 
-	getImgPatchLum(img_HDR)
+	### getImgPatchLum(img_HDR)
 	- Function that selects 24 colorchecker patches in image
 	- input:
 		• img_HDR: the image to choose from
 	- output:
 		• img_patch: selected patches in image
 
-	manualBalance(img_rgb, subImg)
+	### manualBalance(img_rgb, subImg)
 	- Function that performs white balance based on sub image
 	- input:
 		• img_rgb: image to be white balanced
