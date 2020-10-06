@@ -1,5 +1,5 @@
 # HDR_synthesizer
-For 15663 computational photography
+For 15663 computational photography, merge several LDR images into single HDR image. Has additional program for tonemapping, color correction, and noise calibration.
 
 ## HDRjpeg.py ##
 - Performs HDR merging and luminance evaluation on JPG images
