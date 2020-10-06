@@ -123,8 +123,7 @@ For 15663 computational photography
 		• N: downsample factor
 	- output: downsampled image
 
-	### weight(imgVal,w_type,Zmin,Zmax,t_expo=None,
-			isReg=False)
+	### weight(imgVal,w_type,Zmin,Zmax,t_expo=None,isReg=False)
 	- Function that perform pixel weighting
 	- input:
 		• imgVal: image pixel value, can be matrix
